@@ -1,0 +1,63 @@
+{
+  "manifest_version": 3,
+  "name": "Download with LiteDM",
+  "version": "1.4.8",
+  "description": "Send links and pages to the LiteDM download manager.",
+  "permissions": [
+    "contextMenus",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "image_click.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://youtube.com/*",
+        "https://www.youtube.com/*",
+        "https://m.youtube.com/*"
+      ],
+      "js": [
+        "youtube_video_overlay.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "service_worker.js"
+    ]
+  },
+  "action": {
+    "default_title": "Download current page with LiteDM",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/litedm-16.png",
+      "32": "icons/litedm-32.png",
+      "48": "icons/litedm-48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/litedm-16.png",
+    "32": "icons/litedm-32.png",
+    "48": "icons/litedm-48.png",
+    "128": "icons/litedm-128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "browser-extension@litedm.local",
+      "strict_min_version": "109.0"
+    }
+  }
+}

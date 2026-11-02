@@ -1,0 +1,199 @@
+:root {
+  color-scheme: light;
+  font: 13px/1.4 system-ui, sans-serif;
+  color: #172033;
+  background: #f8fafc;
+}
+
+body {
+  width: 560px;
+  min-height: 190px;
+  margin: 0;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+}
+
+header p,
+#message,
+#empty {
+  margin: 3px 0 0;
+  color: #64748b;
+}
+
+#message {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: #334155;
+  background: #f1f5f9;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: #fff;
+  background: #0e7490;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #155e75;
+}
+
+.table-wrap {
+  max-height: 460px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th,
+td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+th:first-child,
+td:first-child {
+  width: 34%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 37%;
+}
+
+th:last-child,
+td:last-child {
+  width: 29%;
+}
+
+th:last-child {
+  text-align: right;
+}
+
+.status-content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) 36px;
+  align-items: center;
+  justify-items: end;
+  gap: 6px;
+}
+
+.status-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.status-downloading {
+  color: #0369a1;
+}
+
+.status-paused,
+.status-queued,
+.status-pausing,
+.status-cancelling {
+  color: #a16207;
+}
+
+.download-control {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  place-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  padding: 0;
+  color: #0e7490;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.download-control:hover:not(:disabled) {
+  color: #fff;
+  background: #0e7490;
+  border-color: #0e7490;
+}
+
+.download-control:focus-visible {
+  outline: 2px solid #0891b2;
+  outline-offset: 2px;
+}
+
+.download-control:disabled {
+  cursor: wait;
+  color: #64748b;
+  background: #f1f5f9;
+  opacity: 1;
+}
+
+.control-spinner {
+  width: 15px;
+  height: 15px;
+  box-sizing: border-box;
+  border: 2px solid #cbd5e1;
+  border-top-color: #0e7490;
+  border-radius: 50%;
+  animation: control-spin 700ms linear infinite;
+}
+
+@keyframes control-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.file-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.progress-detail {
+  color: #475569;
+  font-size: 12px;
+}
+
+.progress-detail progress {
+  display: block;
+  width: 100%;
+  height: 7px;
+  margin-top: 6px;
+  accent-color: #0e7490;
+}

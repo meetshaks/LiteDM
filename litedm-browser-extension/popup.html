@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LiteDM downloads</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>LiteDM</h1>
+        <p id="summary">Checking downloads…</p>
+      </div>
+    </header>
+    <p id="message" role="status" hidden></p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Progress</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody id="downloads"></tbody>
+      </table>
+      <p id="empty" hidden>No active LiteDM downloads.</p>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
